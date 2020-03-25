@@ -51,7 +51,28 @@ export const DeleteIcon = props => (
   </div>
 
 )
+export const ResizeIcon = ({  }) => (
+  <div className="rmc-resize">
 
+    <style jsx>{`
+      .rmc-resize {
+        position: absolute;
+        width: 15px;
+        height: 15px;
+        float: left;
+        font-size: 12px;
+        background:#262626;
+        text-align: center;
+        line-height: 15px;
+        color: white;
+        opacity: 0;
+        right:0;
+        bottom:0;
+      }
+    `}
+    </style>
+  </div>
+)
 export const NumberIcon = ({ number }) => (
   <div className="rmc-number">
     { number }

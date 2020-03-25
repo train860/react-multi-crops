@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { equals, is, update, remove } from 'ramda'
 import interact from 'interactjs'
-import { DeleteIcon, NumberIcon } from './Icons'
+import { DeleteIcon, NumberIcon,ResizeIcon } from './Icons'
 
 class Crop extends Component {
   static cropStyle = (coordinate) => {
@@ -32,7 +32,7 @@ class Crop extends Component {
       .draggable({})
       .resizable({
         edges: {
-          left: true, right: true, bottom: true, top: true,
+          left: '.rmc-number', right: '.rmc-resize', bottom: '.rmc-resize', top: '.rmc-number'
         },
       })
       .on('dragmove', this.handleDragMove)
@@ -115,6 +115,7 @@ class Crop extends Component {
         ref={crop => this.crop = crop}
       >
         <NumberIcon number={index + 1} />
+        <ResizeIcon />
         <DeleteIcon
           onClick={this.handleDelete}
         />
